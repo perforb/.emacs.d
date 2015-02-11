@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: today
+# key: today
+# --
+== `(insert-current-date)` $0 ==
+
+# Daily Report
+* 
+
+# Note

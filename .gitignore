@@ -1,0 +1,7 @@
+*.elc
+.session.dat
+ac-comphist.dat
+auto-save-list/
+eshell/
+url/
+
