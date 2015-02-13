@@ -183,6 +183,7 @@
 
 (set-frame-parameter nil 'alpha 96)
 (tool-bar-mode 0)
+(scroll-bar-mode -1)
 (menu-bar-mode 0)
 
 ;; #* というバックアップファイルを作らない
@@ -274,6 +275,11 @@
 (show-paren-mode t)
 (set-face-background 'show-paren-match-face "#000000")
 (set-face-foreground 'show-paren-mismatch-face "red")
+
+;; yascroll
+;; http://d.hatena.ne.jp/m2ym/
+(require 'yascroll)
+(global-yascroll-bar-mode 1)
 
 ;; ------------------------------------------------------------------------
 ;; @alias

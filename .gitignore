@@ -1,6 +1,7 @@
 *.elc
 .session.dat
 ac-comphist.dat
+recentf
 auto-save-list/
 eshell/
 url/
