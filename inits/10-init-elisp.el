@@ -198,6 +198,13 @@
 ;; ベルを鳴らさない
 (setq ring-bell-function 'ignore)
 
+;; redo
+(require 'redo+)
+(global-set-key (kbd "C-M-/") 'redo)
+(setq undo-no-redo t)
+(setq undo-limit 600000)
+(setq undo-strong-limit 900000)
+
 ;; 略語展開・補完を行うコマンドをまとめる
 (setq hippie-expand-try-functions-list
       '(try-complete-file-name-partially   ;ファイル名の一部

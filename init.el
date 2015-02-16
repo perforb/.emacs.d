@@ -25,3 +25,4 @@
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")
 (put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
