@@ -1,8 +1,43 @@
 ;; ------------------------------------------------------------------------
 ;; @ theme
 
-(load-theme 'ample t)
-(enable-theme 'ample)
+(load-theme 'flatland-black t)
+(enable-theme 'flatland-black)
+
+;; line number
+(set-face-attribute 'linum nil :foreground "#888888" :height 1.0)
+
+;; ------------------------------------------------------------------------
+;; @color
+
+;; (set-foreground-color                                  "#ffffff") ; 文字色
+;; (set-background-color                                  "#000000") ; 背景色
+(set-cursor-color                                      "#FF6600") ; カーソル色
+;; (set-face-background 'region                           "#CCFFFF") ; リージョン
+;; (set-face-foreground 'mode-line                        "#ffffff") ; モードライン文字
+;; (set-face-background 'mode-line                        "#00008B") ; モードライン背景
+;; (set-face-foreground 'mode-line-inactive               "#000000") ; モードライン文字 (非アクティブ)
+;; (set-face-background 'mode-line-inactive               "#ffffff") ; モードライン背景 (非アクティブ)
+;; (set-face-foreground 'font-lock-comment-delimiter-face "#888888") ; コメントデリミタ
+;; (set-face-foreground 'font-lock-comment-face           "#888888") ; コメント
+;; (set-face-foreground 'font-lock-string-face            "#FFCC33") ; 文字列
+;; (set-face-foreground 'font-lock-function-name-face     "#ffffff") ; 関数名
+(set-face-foreground 'font-lock-keyword-face           "#9999FF") ; キーワード
+;; (set-face-foreground 'font-lock-constant-face          "#b8d977") ; 定数 (this, self なども)
+;; (set-face-foreground 'font-lock-variable-name-face     "#FFCC33") ; 変数
+(set-face-foreground 'font-lock-type-face              "#FF9999") ; クラス
+;; (set-face-foreground 'fringe                           "#666666") ; fringe (折り返し記号なでが出る部分)
+;; (set-face-background 'fringe                           "#282828") ; fringe
+
+;; カーソル位置のフェースを調べる関数
+(defun describe-face-at-point ()
+  "Return face used at point."
+  (interactive)
+  (message "%s" (get-char-property (point) 'face)))
+
+;; 現在行をハイライト
+;; (global-hl-line-mode t)
+;; (set-face-background 'hl-line "#222244")
 
 ;; ------------------------------------------------------------------------
 ;; @ dired
@@ -186,6 +221,9 @@
 (scroll-bar-mode -1)
 (menu-bar-mode 0)
 
+;; 現在位置のファイル・ URL を開く
+(ffap-bindings)
+
 ;; #* というバックアップファイルを作らない
 (setq auto-save-default nil)
 
@@ -280,7 +318,7 @@
 (setq show-paren-delay 0)
 (setq show-paren-style 'mixed)
 (show-paren-mode t)
-(set-face-background 'show-paren-match-face "#000000")
+(set-face-background 'show-paren-match-face "#FF6600")
 (set-face-foreground 'show-paren-mismatch-face "red")
 
 ;; yascroll
