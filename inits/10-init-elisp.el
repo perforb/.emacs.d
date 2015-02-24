@@ -201,17 +201,26 @@
 (global-set-key (kbd "<C-M-down>") 'duplicate-line-forward)
 
 ;; moving the line like eclipse
-(defun move-line (arg)
+(defun move-line-down ()
+  (interactive)
   (let ((col (current-column)))
     (save-excursion
       (forward-line)
-      (transpose-lines arg))
-    (when (> arg 0)
-      (forward-line arg))
+      (transpose-lines 1))
+    (forward-line)
     (move-to-column col)))
 
-(global-set-key (kbd "<M-up>") (lambda () (interactive) (move-line -1)))
-(global-set-key (kbd "<M-down>") (lambda () (interactive) (move-line 1)))
+(defun move-line-up ()
+  (interactive)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines -1))
+    (forward-line -1)
+    (move-to-column col)))
+
+(global-set-key (kbd "M-<down>") 'move-line-down)
+(global-set-key (kbd "M-<up>") 'move-line-up)
 
 ;; ------------------------------------------------------------------------
 ;; @etc
